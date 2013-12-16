@@ -1,0 +1,414 @@
+.clearfix
+{
+    *zoom: 1;
+}
+
+    .clearfix:before,
+    .clearfix:after
+    {
+        display: table;
+        content: "";
+    }
+
+    .clearfix:after
+    {
+        clear: both;
+    }
+
+html,body {
+    background-color: #2D2927;
+    color: #fff;
+    font-family: helvetica, arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 12pt;
+    text-align: center;
+}
+
+
+.wrapper {
+    width: 100%;
+    
+    overflow: hidden;
+    padding: 0;
+   
+}
+
+.header {
+    display:none;
+    padding: 10px 0;
+}
+#bottom-section {
+    display: none;
+    padding-top: 20px;
+}
+
+#logo-pattern {
+    float: right;
+    margin-right: 50px;
+}
+.game-controls {
+    margin-left: 20px;
+}
+
+.game-control {
+    width: 100px;
+    height: 50px;
+    padding-top: 50px;
+    float: left;
+    background: transparent url(../images/button.png) center top no-repeat;
+    color: #6c6b65;
+    cursor: pointer;
+    
+}
+
+#controls {
+    display:none;
+    position: absolute;
+    z-index: 1000;
+    bottom: 0;
+    
+    overflow: hidden;
+    width:95%;
+    margin: 40px 20px;
+}
+.control-button {
+    width: 85px;
+    height: 85px;
+   
+    float: left;
+}
+#directions {
+    float: right;
+    width: 200px;
+}
+
+#main-content {
+    position: relative;
+}
+
+#title-screen, .message {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;   
+}
+.message
+{
+    top: 30px;
+    display:none;
+    max-width: 500px;
+}
+#title-screen > img, .message > img {
+    width: 100%;
+}
+#title-screen > img.portrait {
+    display: none;
+}
+#title-screen > img.landscape {
+    display: none;
+}
+#choosePlayer-header
+{
+    cursor: pointer;
+    float: left;
+    width: 300px;
+    height: 75px;
+    color: #F4C62F;
+   
+    padding: 5px;
+    text-align:left;
+}
+
+#choosePlayer
+{
+    padding-top: 15px;
+    float:left;
+    height:250px;
+    overflow-y: scroll;
+    display:none;
+}
+
+#staffList > li
+{
+    display:block;
+    float: left;
+    width: 100px;
+    height: 100px;
+    background: #fff url(../images/star.png);
+    margin: 0 5px 5px 0;
+    border-radius: 50px;
+    overflow:hidden;
+}
+
+
+
+    #staffList > li > label
+    {
+        display:block;
+        height: 100%;
+        height: 100%;
+    }
+
+#staffList > li > input[type="radio"]
+{
+   position: absolute;
+   top: -9999px;
+   left: -9999px;
+    
+}
+
+    #staffList > li > input[type="radio"]:checked + label
+    {
+        background: #F1592A;
+        box-shadow: #F1592A 3px 3px;
+            
+    }
+#no-canvas-warning
+{
+    position: absolute;
+   
+     
+    height:300px;
+    width: 100%;
+    background:#ccc;
+    display:none;
+    color:red;
+    font-size: 100px;
+    font-weight: bold;
+    padding: 60px 0;
+}
+.no-canvas #no-canvas-warning
+{
+    display:block;
+}
+.no-canvas #title-screen
+{
+    display:none;
+}
+
+
+input[type="submit"], a.button 
+{
+    text-decoration:none;
+    font-size:14px;
+    line-height: 20px;
+    display: inline-block;
+    background: #F1592A; /* Old browsers */
+    background: -moz-linear-gradient(top, #F1592A 0%, #D14E24 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#F1592A), color-stop(100%,#D14E24)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #F1592A 0%,#D14E24 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #F1592A 0%,#D14E24 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #F1592A 0%,#D14E24 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #F1592A 0%,#D14E24 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F1592A', endColorstr='#D14E24',GradientType=0 ); /* IE6-9 */
+    border: 1px solid #F1592A;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2) inset, 0 0 2px rgba(0, 0, 0, 0.2) inset, 0 1px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2) inset, 0 0 2px rgba(0, 0, 0, 0.2) inset, 0 1px 0 rgba(0, 0, 0, 0.2);
+    color: #fff;
+    padding: 4px 14px;
+    -webkit-appearance: none; /*This stops IOS from changing the appearance of the buttons*/
+    -webkit-transition: .4s linear;  
+    -moz-transition: .4s linear;  
+    -o-transition: .4s linear;  
+    -ms-transition: .4s linear;  
+    transition: .4s linear;  
+
+}
+a.button.grey, input[type="submit"].grey
+{
+    background: #575757; /* Old browsers */
+    background: -moz-linear-gradient(top, #575757 0%, #444444 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#575757), color-stop(100%,#444444)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #575757 0%,#444444 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #575757 0%,#444444 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #575757 0%,#444444 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #575757 0%,#444444 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#575757', endColorstr='#444444',GradientType=0 ); /* IE6-9 */
+    border: 1px solid #575757;
+
+}
+
+input[type="submit"]:hover, input[type="submit"]:focus, a.button:hover
+{
+    background: transparent !important;
+    cursor:pointer;
+   
+   
+}
+
+@media only screen and  (orientation:portrait) {
+    .title-screen > img.portrait {
+    display: block;
+}
+title-screen > img.landscape {
+    display: none;
+}
+} 
+
+@media only screen and (min-width: 480px)
+{
+    
+    #bottom-section, .header {
+        display:none;
+    }
+    
+}
+
+@media only screen and (min-width: 780px)
+{
+    .wrapper {
+        
+        width: 80%;
+        margin: 30px auto;
+        background: transparent url(../images/bg.png) repeat;
+        overflow: hidden;
+        padding: 0 20px;
+        border-radius: 10px;
+        border-bottom: 3px solid #222;
+        -webkit-box-shadow: 1px 1px 4px #716f69 inset;
+}
+ 
+    #bottom-section, .header {
+        display:block;
+    }
+    
+}
+
+@media only screen and  (orientation:landscape) and (-webkit-min-device-pixel-ratio: 2) {
+    #bottom-section, .header {
+        display:none;
+        
+    }
+    .wrapper {
+    width: 100%;
+    
+    overflow: hidden;
+    padding: 0;
+   
+}
+}
+
+
+/*
+ * jReject (jQuery Browser Rejection Plugin)
+ * Version 1.0.0
+ * URL: http://jreject.turnwheel.com/
+ * Description: jReject is a easy method of rejecting specific browsers on your site
+ * Author: Steven Bower (TurnWheel Designs) http://turnwheel.com/
+ * Copyright: Copyright (c) 2009-2011 Steven Bower under dual MIT/GPL license.
+ */
+
+#jr_overlay {
+	top: 0;
+	left: 0;
+	padding: 0;
+	margin: 0;
+	z-index: 2147483646;
+	position: absolute;
+}
+
+#jr_wrap {
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	z-index: 2147483647;
+	padding: 0;
+	margin: 0;
+}
+
+#jr_inner {
+	font-family: "Lucida Grande","Lucida Sans Unicode",Arial,Verdana,sans-serif;
+	font-size: 12px;
+	background: #FFF;
+	border: 1px solid #CCC;
+	color: #4F4F4F;
+	margin: 0 auto;
+	height: auto;
+	padding: 20px;
+	position: relative;
+}
+
+#jr_header {
+	display: block;
+	color: #333;
+	padding: 5px;
+	padding-bottom: 0;
+	margin: 0;
+	font-family: Helvetica,Arial,sans-serif;
+	font-weight: bold;
+	text-align: left;
+	font-size: 1.3em;
+	margin-bottom: 0.5em;
+}
+
+#jr_inner p {
+	text-align: left;
+	padding: 5px;
+	margin: 0;
+}
+
+#jr_inner ul {
+	list-style-image: none;
+	list-style-position: outside;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+#jr_inner ul li {
+	cursor: pointer;
+	float: left;
+	width: 120px;
+	height: 122px;
+	margin: 0 10px 10px 10px;
+	padding: 0;
+	text-align: center;
+}
+
+#jr_inner li a {
+	color: #333;
+	font-size: 0.8em;
+	text-decoration: none;
+	padding: 0;
+	margin: 0;
+}
+
+#jr_inner li a:hover {
+	text-decoration: underline;
+}
+
+#jr_inner .jr_icon {
+	width: 100px;
+	height: 100px;
+	margin: 1px auto;
+	padding: 0;
+	background: transparent no-repeat scroll left top;
+	cursor: pointer;
+}
+
+#jr_close {
+	margin: 0 0 0 50px;
+	clear: both;
+	text-align: left;
+	padding: 0;
+	margin: 0;
+}
+
+#jr_close a {
+	color: #000;
+	display: block;
+	width: auto;
+	margin: 0;
+	padding: 0;
+	text-decoration: underline;
+}
+
+#jr_close p {
+	padding: 10px 0 0 0;
+	margin: 0;
+}

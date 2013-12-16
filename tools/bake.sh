@@ -5,7 +5,7 @@ IMPACT_LIBRARY=lib/impact/impact.js
 GAME=lib/game/main.js
 
 # Output file
-OUTPUT_FILE=game.min.js
+OUTPUT_FILE=content/js/xmasgame.min.js
 
 
 # Change CWD to Impact's base dir and bake!
